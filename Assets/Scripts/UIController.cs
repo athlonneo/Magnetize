@@ -19,29 +19,30 @@ public class UIController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseGame();
+            PauseGame();
         }
     }
-    public void pauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0;
         pausePanel.SetActive(true);
     }
 
-    public void resumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1;
         pausePanel.SetActive(false);
     }
 
-    public void restartGame()
+    public void RestartGame()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(currActiveScene.name);
     }
 
-    public void endGame()
+    public void EndGame()
     {
+        Time.timeScale = 0;
         pausePanel.SetActive(true);
         resumeBtn.SetActive(false);
         levelClearTxt.SetActive(true);

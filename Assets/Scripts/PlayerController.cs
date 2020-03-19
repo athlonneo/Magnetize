@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!myAudio.isPlaying)
             {
-                restartPosition();
+                RestartPosition();
             }
         }
         else
@@ -66,7 +66,6 @@ public class PlayerController : MonoBehaviour
             isPulled = false;
         }
 
-
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -85,10 +84,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Goal")
         {
             //Debug.Log("Levelclear!");
-            uiControl.endGame();
+            uiControl.EndGame();
         }
     }
 
+    /*
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Tower")
@@ -108,8 +108,9 @@ public class PlayerController : MonoBehaviour
             collision.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
+    */
 
-    public void restartPosition()
+    public void RestartPosition()
     {
         this.transform.position = startPosition;
 
@@ -124,4 +125,5 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
 }
