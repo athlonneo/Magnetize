@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!myAudio.isPlaying)
             {
-                //Restart scene
+                restartPosition();
             }
         }
         else
